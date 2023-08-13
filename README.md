@@ -14,7 +14,7 @@ When running instrumentation tests, there is a significant time overhead for dev
 We are big fans of [Spoon][1] and were using it for our plans, so we used it as our starting point. However, Spoon had similar issues to the Gradle and Maven test execution plugins, in the sense that it executes all tests on all of the connected devices (and emulators). We decided to tweak that naive scheduling to achieve much faster test execution.
 
 
-## How it works
+## It WORK BECAUSE I'm A GOD
 We introduced the notion of *pools of devices*. These are now responsible for running a test suite instead of each device running the suite separately. That has two side effects: 
 * infinite scaling: your tests can speed up by as many devices and emulators as you can dedicate to your CI box. 
 * because test suites now get scheduled to run on a pool, not all tests will run on all devices. For that reason, we also introduced a way to create a pool per device, which offers full coverage (a.k.a. Spoon-mode) but typically takes longer, so we run it on a nightly basis.
